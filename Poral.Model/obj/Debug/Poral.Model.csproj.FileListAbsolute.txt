@@ -1,0 +1,5 @@
+C:\Users\shali\Documents\My Projects\RhinoSql\Poral.Model\bin\Debug\Poral.Model.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Poral.Model\bin\Debug\Poral.Model.pdb
+C:\Users\shali\Documents\My Projects\RhinoSql\Poral.Model\obj\Debug\Poral.Model.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Poral.Model\obj\Debug\Poral.Model.pdb
+C:\Users\shali\Documents\My Projects\RhinoSql\Poral.Model\obj\Debug\Poral.Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,14 @@
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\Prtal.BIZ.dll.config
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\Prtal.BIZ.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\Prtal.BIZ.pdb
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\EntityFramework.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\System.Data.SQLite.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\EntityFramework.xml
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\bin\Debug\System.Data.SQLite.xml
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\obj\Debug\Prtal.BIZ.dll
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\obj\Debug\Prtal.BIZ.pdb
+C:\Users\shali\Documents\My Projects\RhinoSql\Prtal.BIZ\obj\Debug\Prtal.BIZ.csprojResolveAssemblyReference.cache
