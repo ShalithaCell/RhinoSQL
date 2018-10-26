@@ -57,7 +57,7 @@ namespace RhinoSql.Forms
             dcombo = (DataGridViewComboBoxColumn)dgvParams.Columns["Type"];
             dcombo.DataSource = dt;
             dcombo.DisplayMember = "MSSQL";
-            dcombo.ValueMember = "ID";
+            dcombo.ValueMember = "MSSQL";
             
         }
          
@@ -70,27 +70,54 @@ namespace RhinoSql.Forms
             txtProcedureName.Text = "Enter procedure name";
         }
 
-        private void GetParameterList()
+        private int getRowCount()
         {
             int counter = 0;
 
             dgvParams.AllowUserToAddRows = false;
 
-            Tuple<string[], string[], string[], bool[]> paramListTuple = new Tuple<string[], string[], string[], bool[]> { };
+            foreach (DataGridViewRow row in dgvParams.Rows)
+            {
+                if (row.Cells[0].Value.ToString() != string.Empty && row.Cells[1].Value.ToString() != string.Empty)
+                    counter++;
+            }
+
+            dgvParams.AllowUserToAddRows = true;
+
+            return counter;
+        }
+
+        private Tuple<string[], string[], string[], bool[]> GetParameterList()
+        {
+            int counter = 0;
+            int arraySize = getRowCount();
+
+            dgvParams.AllowUserToAddRows = false;
+
+            
+
+            string[] names = new string[arraySize];
+            string[] type = new string[arraySize];
+            string[] size = new string[arraySize];
+            bool[] output = new bool[arraySize];
+
 
             foreach (DataGridViewRow row in dgvParams.Rows)
             {
                 if (row.Cells[0].Value.ToString() != string.Empty && row.Cells[1].Value.ToString() != string.Empty)
                 {
-                    paramListTuple.Item1[counter] = row.Cells[0].Value.ToString();
-
-
+                    names[counter] = row.Cells[0].Value.ToString();
+                    type[counter] = row.Cells[1].Value.ToString();
+                    size[counter] = row.Cells[2].Value == null ? string.Empty : row.Cells[2].Value.ToString();
+                    output[counter] = row.Cells[3].Value == null ? false : Convert.ToBoolean(row.Cells[3].Value.ToString());
                 }
 
                 counter++;
             }
 
             dgvParams.AllowUserToAddRows = true;
+
+            return Tuple.Create(names, type, size, output);
 
 
         }
@@ -101,6 +128,9 @@ namespace RhinoSql.Forms
 
             //Variables
             string footer = string.Empty;
+            string paramList = string.Empty;
+
+            paramList = QueryTemplates.MSSQLcreateParametrs( GetParameterList() );
 
             if (txtProcedureName.Text != string.Empty && txtProcedureName.Text == "Enter procedure name")
                 return;
@@ -228,7 +258,7 @@ namespace RhinoSql.Forms
 
             if (!checkParameterIsAlreadyPlaced("result").Item1)
             {
-                this.dgvParams.Rows.Add("result", "INT", "0", true);
+                this.dgvParams.Rows.Add("result", "INT", "", true);
                 dgvParams.Rows[checkParameterIsAlreadyPlaced("result").Item2].ReadOnly = true;
             }
             
@@ -236,7 +266,7 @@ namespace RhinoSql.Forms
             dgvParams.Refresh();
 
             CreatingProcedure();
-
+            
         }
 
         private void dgvParams_DataError(object sender, DataGridViewDataErrorEventArgs e)
